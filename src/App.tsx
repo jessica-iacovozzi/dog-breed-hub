@@ -1,4 +1,5 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react"
+import DogBreedGrid from "./components/DogBreedGrid"
 import NavBar from "./components/NavBar"
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main">
-        Main
+        <DogBreedGrid />
       </GridItem>
     </Grid>
   )
