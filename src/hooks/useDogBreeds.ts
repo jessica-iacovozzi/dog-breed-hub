@@ -2,8 +2,9 @@ import { CanceledError } from "axios";
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 
-interface DogBreed {
+export interface DogBreed {
   name: string;
+  image_link: string;
 }
 
 const useDogBreeds = () => {
