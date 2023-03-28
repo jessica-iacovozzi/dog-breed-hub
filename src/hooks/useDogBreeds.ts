@@ -5,6 +5,18 @@ import apiClient from "../services/api-client";
 export interface DogBreed {
   name: string;
   image_link: string;
+  shedding: number;
+  barking: number;
+  energy: number;
+  protectiveness: number;
+  trainability: number;
+  grooming: number;
+  drooling: number;
+  playfulness: number;
+  coat_length: number;
+  good_with_other_dogs: number;
+  good_with_children: number;
+  good_with_strangers: number;
 }
 
 const useDogBreeds = () => {

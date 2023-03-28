@@ -8,7 +8,7 @@ const DogBreedGrid = () => {
   return (
     <>
     {error && <Text>{error}</Text>}
-    <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} padding='15px' spacing={15}>
+    <SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} padding='20px' spacing={15}>
       {dogBreeds.map(breed =>
         <DogBreedCard key={breed.name} dogBreed={breed} />
       )}
