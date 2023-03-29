@@ -22,21 +22,27 @@ export interface DogBreed {
 const useDogBreeds = () => {
   const [dogBreeds, setDogBreeds] = useState<DogBreed[]>([]);
   const [error, setError] = useState('');
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
+    setLoading(true);
 
     apiClient.get('/dogs', { signal: controller.signal })
-      .then(res => setDogBreeds(res.data))
+      .then(res => {
+        setDogBreeds(res.data);
+        setLoading(false);
+      })
       .catch(err => {
         if (err instanceof CanceledError) return;
-        setError(err.message)
+        setError(err.message);
+        setLoading(false);
       });
 
     return () => controller.abort();
   }, [])
 
-  return { dogBreeds, error }
+  return { dogBreeds, error, isLoading }
 }
 
 export default useDogBreeds;

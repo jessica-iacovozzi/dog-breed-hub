@@ -8,7 +8,7 @@ interface Props {
 
 const DogBreedCard = ({ dogBreed }: Props) => {
   return (
-    <Card borderRadius={10} overflow='hidden'>
+    <Card width='350px' borderRadius={10} overflow='hidden' marginTop='50px'>
       <Image src={dogBreed.image_link} />
       <CardBody textAlign='center'>
         <Heading fontSize='3xl'>{dogBreed.name}</Heading>
