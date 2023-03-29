@@ -1,27 +1,3 @@
 form {
   width: 100%;
 }
-/*
-.li {
-  grid-column: span 2;
-}
-
-.li:last-child:nth-child(3n - 1) {
-  grid-column-end: -2;
-}
-
-.li:nth-last-child(2):nth-child(3n + 1) {
-  grid-column-end: 4;
-} */
-
-/* .li:last-child {
-  grid-column-end: 8;
-}
-
-.li:nth-last-child(2) {
-  grid-column-end: 6;
-}
-
-.li:nth-last-child(3) {
-  grid-column-end: 4;
-} */
