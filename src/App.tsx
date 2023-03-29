@@ -8,7 +8,7 @@ function App() {
       <GridItem area="nav">
         <NavBar />
       </GridItem>
-      <GridItem area="main"  marginTop="100px">
+      <GridItem area="main">
         <DogBreedGrid />
       </GridItem>
     </Grid>

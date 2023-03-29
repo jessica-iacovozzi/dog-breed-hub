@@ -35,7 +35,7 @@ const useDogBreeds = () => {
       })
       .catch(err => {
         if (err instanceof CanceledError) return;
-        setError(err.message);
+        setError('Please refresh page');
         setLoading(false);
       });
 

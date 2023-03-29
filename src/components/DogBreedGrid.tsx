@@ -9,7 +9,7 @@ const DogBreedGrid = () => {
 
   return (
     <>
-    {error && <Text>{error}</Text>}
+    {error && <Text textAlign='center'>{error}</Text>}
     <SimpleGrid columns={{ sm: 1, md: 2, xl: 3, '2xl': 4 }} padding='20px' spacing='30px' justifyItems='center'>
       {isLoading && skeletons.map(skeleton => <DogBreedCardSkeleton key={skeleton} />)}
       {dogBreeds.map(breed =>
