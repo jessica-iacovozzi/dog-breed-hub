@@ -1,6 +1,7 @@
 import { Grid, GridItem } from "@chakra-ui/react"
 import { useState } from "react";
 import DogBreedGrid from "./components/DogBreedGrid"
+import DogBreedHeading from "./components/DogBreedHeading";
 import NavBar from "./components/NavBar"
 
 export interface BreedQuery {
@@ -16,6 +17,7 @@ function App() {
         <NavBar onSearch={(searchText) => setBreedQuery({...breedQuery, searchText})} />
       </GridItem>
       <GridItem area="main">
+        <DogBreedHeading breedQuery={breedQuery} />
         <DogBreedGrid breedQuery={breedQuery} />
       </GridItem>
     </Grid>
