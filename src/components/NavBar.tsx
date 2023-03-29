@@ -9,10 +9,9 @@ interface Props {
 
 const NavBar = ({ onSearch }:Props) => {
   return (
-    <HStack padding='10px 20px' width='100%'>
+    <HStack padding='15px 20px' width='100%'>
       <HStack>
         <Image src={logo} boxSize='75px' />
-        {/* <Text fontSize='xl' fontWeight='bold' whiteSpace='nowrap'>Dog Breed Hub</Text> */}
       </HStack>
       <SearchInput onSearch={onSearch} />
       <ColorModeSwitch />
