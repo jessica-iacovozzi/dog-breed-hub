@@ -1,5 +1,6 @@
 import { CanceledError } from "axios";
 import { useEffect, useState } from "react";
+import { BreedQuery } from "../App";
 import apiClient from "../services/api-client";
 
 export interface DogBreed {
@@ -19,7 +20,7 @@ export interface DogBreed {
   good_with_strangers: number;
 }
 
-const useDogBreeds = () => {
+const useDogBreeds = (breedQuery: BreedQuery) => {
   const [dogBreeds, setDogBreeds] = useState<DogBreed[]>([]);
   const [error, setError] = useState('');
   const [isLoading, setLoading] = useState(false);
@@ -28,7 +29,11 @@ const useDogBreeds = () => {
     const controller = new AbortController();
     setLoading(true);
 
-    apiClient.get('/dogs', { signal: controller.signal })
+    apiClient.get('/dogs', {
+      params: {
+        name: breedQuery.searchText
+      }
+     })
       .then(res => {
         setDogBreeds(res.data);
         setLoading(false);
@@ -40,7 +45,7 @@ const useDogBreeds = () => {
       });
 
     return () => controller.abort();
-  }, [])
+  }, [breedQuery])
 
   return { dogBreeds, error, isLoading }
 }

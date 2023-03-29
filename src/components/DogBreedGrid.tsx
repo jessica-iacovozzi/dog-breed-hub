@@ -1,10 +1,15 @@
 import { SimpleGrid, Text } from '@chakra-ui/react'
+import { BreedQuery } from '../App';
 import useDogBreeds from '../hooks/useDogBreeds';
 import DogBreedCard from './DogBreedCard';
 import DogBreedCardSkeleton from './DogBreedCardSkeleton';
 
-const DogBreedGrid = () => {
-  const { dogBreeds, error, isLoading } = useDogBreeds();
+interface Props {
+  breedQuery: BreedQuery;
+}
+
+const DogBreedGrid = ({breedQuery}: Props) => {
+  const { dogBreeds, error, isLoading } = useDogBreeds(breedQuery);
   const skeletons = [1, 2, 3 , 4, 5, 6]
 
   return (
