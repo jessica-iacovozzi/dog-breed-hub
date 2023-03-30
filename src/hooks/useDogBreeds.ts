@@ -18,6 +18,16 @@ export interface DogBreed {
   good_with_other_dogs: number;
   good_with_children: number;
   good_with_strangers: number;
+  min_life_expectancy: number;
+  max_life_expectancy: number;
+  min_height_female: number;
+  min_height_male: number;
+  max_height_male: number;
+  max_height_female: number;
+  min_weight_male: number;
+  max_weight_male: number;
+  max_weight_female: number;
+  min_weight_female: number;
 }
 
 const useDogBreeds = (breedQuery: BreedQuery) => {
