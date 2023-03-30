@@ -5,7 +5,7 @@ const DogBreedCardSkeleton = () => {
     <Card width='100%' borderRadius={10} overflow='hidden'>
       <Skeleton height='200px' />
       <CardBody>
-        <SkeletonText height='350px'/>
+        <SkeletonText height='400px'/>
       </CardBody>
     </Card>
   )
