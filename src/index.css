@@ -31,7 +31,48 @@ form {
 }
 
 .flippable-card-container {
-  perspective: 1000px;
-  height: 490px;
+  height: 575px;
   width: -webkit-fill-available
+}
+
+.star-container {
+  padding: 0 4px!important;
+}
+
+@media screen and (max-width:810px) {
+  .star-container {
+    padding: 0 3px!important;
+  }
+}
+
+@media screen and (max-width:393px) {
+  .css-1flyc9m {
+    font-size: 16px!important;
+  }
+  .star-container {
+    padding: 0 2px!important;
+  }
+  .css-1f4z4y2 {
+    font-size: 24px!important;
+  }
+  .flippable-card-container {
+    height: 525px!important;
+  }
+}
+
+@media screen and (max-width:370px) {
+  .css-1f4z4y2 {
+    font-size: 20px!important;
+  }
+  .star-container {
+    padding: 0!important;
+  }
+  .t
+  .widget-svg {
+    width: 20px!important;
+    height: 20px!important;
+  }
+  .css-1pyxxra:last-child > p {
+    width: min-content!important;
+  }
 }

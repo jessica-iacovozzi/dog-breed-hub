@@ -6,6 +6,14 @@ const config: ThemeConfig = {
 
 const theme = extendTheme({
   config,
+  breakpoints: {
+    sm: "320px",
+    md: "768px",
+    lg: "960px",
+    xl: "1202px",
+    '2xl': "1600px",
+    '3xl': "2100px"
+  },
   colors: {
     gray: {
       50: '#f9f9f9',

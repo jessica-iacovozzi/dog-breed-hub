@@ -15,7 +15,7 @@ const DogBreedGrid = ({breedQuery}: Props) => {
   if (error) return <Text textAlign='center'>{error}</Text>
 
   return (
-    <SimpleGrid columns={{ sm: 1, md: 2, xl: 3, '2xl': 4 }} padding={7} paddingTop='0' spacing={7} justifyItems='center'>
+    <SimpleGrid columns={{ sm: 1, md: 2, xl: 3, '2xl': 4, '3xl': 5 }} padding={7} paddingTop='0' spacing={7} justifyItems='center'>
       {isLoading && skeletons.map(skeleton => <DogBreedCardSkeleton key={skeleton} />)}
       {dogBreeds.map(breed =>
         <div className='flippable-card-container'>
