@@ -31,10 +31,12 @@ form {
   height: 100%;
   position: absolute!important;
   overflow: hidden;
-  border-radius: 50px;
-  box-shadow: 0px 9px 0 1px black;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  border-radius: 11px!important;
+  border-color: black!important;
+  border-width: 1px!important;
+  box-shadow: 9px 9px 1px 2px black!important;
 }
 
 .card-back {

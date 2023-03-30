@@ -8,8 +8,8 @@ interface Props {
 const DogBreedCard = ({ dogBreed }: Props) => {
   return (
     <Card className='card-front'>
-      <Image height='50%' objectFit='cover' className="dog-image" src={dogBreed.image_link} />
-      <CardBody height='50%' textAlign='center' display='flex' flexDirection='column' justifyContent='space-between'>
+      <Image height='50%' objectFit='cover' src={dogBreed.image_link} />
+      <CardBody height='50%' textAlign='center' display='flex' flexDirection='column' justifyContent='space-evenly'>
         <Heading fontSize='3xl'>{dogBreed.name}</Heading>
         <div>
           <HStack marginTop={5} justifyContent='space-between'>

@@ -22,7 +22,7 @@ const DogBreedReverseCard = ({ dogBreed }: Props) => {
 
   return (
     <Card className='card-back'>
-      <CardBody textAlign='center' display='flex' flexDirection='column' justifyContent='space-between'>
+      <CardBody textAlign='center' display='flex' flexDirection='column' justifyContent='space-evenly'>
         <Heading fontSize='3xl'>{dogBreed.name} characteristics</Heading>
         <div>
           <HStack marginTop={5} justifyContent='space-between'>
