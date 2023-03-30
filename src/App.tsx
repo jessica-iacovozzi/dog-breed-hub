@@ -18,7 +18,7 @@ function App() {
         <NavBar onSearch={(searchText) => setBreedQuery({...breedQuery, searchText})} />
       </GridItem>
       <GridItem area="main">
-        <RefreshButton onSearch={(searchText) => setBreedQuery({...breedQuery, searchText})}/>
+        <RefreshButton />
         <DogBreedHeading breedQuery={breedQuery} />
         <DogBreedGrid breedQuery={breedQuery} />
       </GridItem>
