@@ -1,5 +1,5 @@
-import { HStack, Image, Text } from '@chakra-ui/react'
-import logo from '../assets/donut-dog-hub-icon.svg'
+import { HStack, Image } from '@chakra-ui/react'
+import logo from '/donut-dog-hub-icon.svg'
 import ColorModeSwitch from './ColorModeSwitch'
 import SearchInput from './SearchInput'
 
