@@ -9,7 +9,7 @@ const DogBreedHeading = ({ breedQuery }:Props) => {
   const heading = breedQuery.searchText ? `${breedQuery.searchText.toUpperCase()} BREEDS` : ''
 
   return (
-    <Heading textAlign='center' marginBottom={16}>{heading}</Heading>
+    <Heading textAlign='center' marginY={8}>{heading}</Heading>
   )
 }
 

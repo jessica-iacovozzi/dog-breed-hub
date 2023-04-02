@@ -2,17 +2,6 @@ form {
   width: 100%;
 }
 
-.refresh-btn {
-  padding: 15px 20px;
-  border-radius: 10px;
-  background-color: #202020;
-}
-
-.refresh-btn:hover {
-  text-decoration: none;
-
-}
-
 .spinner {
   display: flex!important;
   width: 100%;
@@ -56,6 +45,12 @@ form {
 
 .star-container {
   padding: 0 4px!important;
+}
+
+@media screen and (max-width:1024px) {
+  .refresh {
+    width: -webkit-fill-available!important;
+  }
 }
 
 @media screen and (max-width:810px) {
