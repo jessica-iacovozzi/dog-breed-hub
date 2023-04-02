@@ -1,4 +1,4 @@
-import { Button, SimpleGrid, Spinner, Text } from '@chakra-ui/react'
+import { SimpleGrid, Spinner, Text } from '@chakra-ui/react'
 import { useState, useRef, useCallback } from 'react';
 import { BreedQuery } from '../App';
 import useDogBreeds from '../hooks/useDogBreeds';
@@ -31,6 +31,7 @@ const DogBreedGrid = ({breedQuery}: Props) => {
       }
       if (breedQuery.searchText && (prevSearch !== breedQuery.searchText) && window.pageYOffset === 0) {
         setOffset(0)
+        setIsAtTop(true)
         console.log('set offset to 0')
       }
     }, {
@@ -39,19 +40,6 @@ const DogBreedGrid = ({breedQuery}: Props) => {
     console.log(isAtTop)
     intObserver.current.observe(breed)
   }, [isLoading, hasMore, breedQuery.searchText] )
-
-  // const getMoreResults = useCallback(() => {
-  //   console.log(offset)
-  //   if (hasMore) {
-  //     if (offset === undefined) {
-  //       setOffset(20)
-  //     } else {
-  //       setOffset(offset + 20)
-  //     }
-  //   }
-  //   console.log('set offset to', offset)
-  //   useDogBreeds(breedQuery)
-  // }, [hasMore])
 
   if (error) return <Text textAlign='center'>{error}</Text>
 

@@ -17,7 +17,7 @@ const FlipCard = React.forwardRef(({ dogBreed }:Props, ref) => {
   )
 
   const content = ref
-    ? <div className="card" ref={ref}>{flipCardBody}</div>
+    ? <div className="card" ref={ref as React.RefObject<HTMLDivElement>}>{flipCardBody}</div>
     : <div className="card">{flipCardBody}</div>
 
   return content
