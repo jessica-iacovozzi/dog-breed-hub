@@ -1,3 +1,4 @@
+import React from 'react';
 import { DogBreed } from "../hooks/useDogBreeds";
 import DogBreedCard from "./DogBreedCard"
 import DogBreedReverseCard from "./DogBreedReverseCard"
@@ -6,14 +7,20 @@ interface Props {
   dogBreed: DogBreed;
 }
 
-const FlipCard = ({ dogBreed }:Props) => {
+const FlipCard = React.forwardRef(({ dogBreed }:Props, ref) => {
 
-  return (
-    <div className="card">
+  const flipCardBody = (
+    <>
       <DogBreedCard dogBreed={dogBreed} />
       <DogBreedReverseCard dogBreed={dogBreed} />
-    </div>
+    </>
   )
-}
+
+  const content = ref
+    ? <div className="card" ref={ref}>{flipCardBody}</div>
+    : <div className="card">{flipCardBody}</div>
+
+  return content
+})
 
 export default FlipCard

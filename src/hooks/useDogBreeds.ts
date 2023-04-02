@@ -1,7 +1,7 @@
 import { CanceledError } from "axios";
 import { useEffect, useState } from "react";
 import { BreedQuery } from "../App";
-import apiClient from "../services/api-client";
+import { getBreedsPage } from "../services/api-client";
 
 export interface DogBreed {
   name: string;
@@ -30,34 +30,38 @@ export interface DogBreed {
   min_weight_female: number;
 }
 
-const useDogBreeds = (breedQuery: BreedQuery) => {
+const useDogBreeds = (breedQuery: BreedQuery, offset = 0) => {
   const [dogBreeds, setDogBreeds] = useState<DogBreed[]>([]);
   const [error, setError] = useState('');
   const [isLoading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
+    const { signal } = controller;
     setLoading(true);
 
-    apiClient.get('/dogs', {
-      params: {
-        name: breedQuery.searchText
-      }
-     })
+    getBreedsPage(offset, breedQuery.searchText, { signal })
       .then(res => {
-        setDogBreeds(res.data);
+        if (breedQuery.searchText && offset === 0) {
+          setDogBreeds([...res]);
+        } else {
+          setDogBreeds(prev => [...prev, ...res]);
+        }
+        setHasMore(Boolean(res.length === 20))
         setLoading(false);
       })
       .catch(err => {
         if (err instanceof CanceledError) return;
+        if (signal.aborted) return;
         setError('Please refresh page');
         setLoading(false);
       });
 
     return () => controller.abort();
-  }, [breedQuery])
-
-  return { dogBreeds, error, isLoading }
+  }, [offset, breedQuery.searchText])
+  console.log(dogBreeds);
+  return { dogBreeds, error, isLoading, hasMore }
 }
 
 export default useDogBreeds;
