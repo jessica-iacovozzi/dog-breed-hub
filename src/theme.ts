@@ -11,8 +11,8 @@ const theme = extendTheme({
     md: "768px",
     lg: "960px",
     xl: "1202px",
-    '2xl': "1600px",
-    '3xl': "2100px"
+    '2xl': "1550px",
+    '3xl': "1950px"
   },
   colors: {
     gray: {
