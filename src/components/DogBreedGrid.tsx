@@ -13,7 +13,7 @@ interface Props {
 const DogBreedGrid = ({breedQuery}: Props) => {
   const [offset, setOffset] = useState(0);
   const { dogBreeds, error, isLoading, hasMore } = useDogBreeds(breedQuery, offset)
-  const skeletons = [1, 2, 3, 4, 5]
+  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8]
   const prevSearch = usePrevious(breedQuery.searchText)
   const intObserver = useRef<IntersectionObserver | null>(null)
   const [isAtTop, setIsAtTop] = useState(true)
