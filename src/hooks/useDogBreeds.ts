@@ -60,7 +60,7 @@ const useDogBreeds = (breedQuery: BreedQuery, offset = 0) => {
 
     return () => controller.abort();
   }, [offset, breedQuery.searchText])
-  console.log(dogBreeds);
+
   return { dogBreeds, error, isLoading, hasMore }
 }
 
