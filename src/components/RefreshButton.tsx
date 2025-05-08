@@ -3,7 +3,7 @@ import { HiOutlineRefresh } from 'react-icons/hi';
 
 const RefreshButton = () => {
   return (
-    <Button leftIcon={<HiOutlineRefresh/>} marginX={7} marginY={1} className='refresh' onClick={
+    <Button leftIcon={<HiOutlineRefresh/>} className='refresh' onClick={
       () => window.location.reload()
     }>Refresh</Button>
   )

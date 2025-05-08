@@ -1,5 +1,5 @@
-import { SimpleGrid, Spinner, Text } from '@chakra-ui/react'
-import { useState, useRef, useCallback } from 'react';
+import { SimpleGrid, Spinner, Text } from '@chakra-ui/react';
+import { useCallback, useRef, useState } from 'react';
 import { BreedQuery } from '../App';
 import useDogBreeds from '../hooks/useDogBreeds';
 import usePrevious from '../hooks/usePrevious';

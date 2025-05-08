@@ -1,7 +1,7 @@
 import React from 'react';
 import { DogBreed } from "../hooks/useDogBreeds";
-import DogBreedCard from "./DogBreedCard"
-import DogBreedReverseCard from "./DogBreedReverseCard"
+import DogBreedCard from "./DogBreedCard";
+import DogBreedReverseCard from "./DogBreedReverseCard";
 
 interface Props {
   dogBreed: DogBreed;

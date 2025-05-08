@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 form {
   width: 100%;
 }
@@ -6,6 +10,12 @@ form {
   display: flex!important;
   width: 100%;
   margin: auto;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  width: 100%;
 }
 
 .card {
@@ -49,6 +59,7 @@ form {
 
 .refresh {
   width: -webkit-fill-available!important;
+  margin-right: unset!important;
 }
 
 @media screen and (max-width:810px) {
@@ -87,4 +98,25 @@ form {
   .css-1pyxxra:last-child > p {
     width: min-content!important;
   }
+}
+
+.css-vbjqvk {
+  width: calc(100% - 25px)!important;
+}
+
+select:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.16)!important;
+}
+
+@media screen and (max-width:800px) {
+  .header {
+    flex-direction: column;
+    gap: 30px;
+    margin-right: 25px;
+  }
+}
+
+.header {
+  display: flex;
 }

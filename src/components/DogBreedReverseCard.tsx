@@ -1,5 +1,5 @@
-import { Card, CardBody, Heading, HStack, Text } from "@chakra-ui/react"
-import StarRatings from "react-star-ratings"
+import { Card, CardBody, Heading, HStack, Text } from "@chakra-ui/react";
+import StarRatings from "react-star-ratings";
 import { DogBreed } from "../hooks/useDogBreeds";
 
 interface Props {
