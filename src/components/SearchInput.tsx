@@ -1,4 +1,4 @@
-import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import { Input, InputGroup, InputLeftElement, Button, VisuallyHidden } from '@chakra-ui/react';
 import { useRef } from 'react';
 import { BsSearch } from 'react-icons/bs';
 
@@ -10,7 +10,7 @@ const SearchInput = ({ onSearch }:SearchText) => {
   const ref = useRef<HTMLInputElement>(null);
 
   return (
-    <form onSubmit={(event) => {
+    <form role='search' onSubmit={(event) => {
       event.preventDefault();
       if (ref.current) {
         onSearch(ref.current.value)
@@ -18,7 +18,10 @@ const SearchInput = ({ onSearch }:SearchText) => {
     }}>
       <InputGroup>
         <InputLeftElement children={<BsSearch />} />
-        <Input ref={ref} borderRadius={20} variant='filled' placeholder='Search dog breeds...' />
+        <Input ref={ref} borderRadius={20} variant='filled' placeholder='Search dog breeds...' aria-label='Search dog breeds' />
+        <VisuallyHidden>
+          <Button type="submit" aria-label="Search">Search</Button>
+        </VisuallyHidden>
       </InputGroup>
     </form>
   )

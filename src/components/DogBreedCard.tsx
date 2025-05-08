@@ -8,7 +8,7 @@ interface Props {
 const DogBreedCard = ({ dogBreed }: Props) => {
   return (
     <Card className='card-front'>
-      <Image height='50%' objectFit='cover' src={dogBreed.image_link} />
+      <Image height='50%' objectFit='cover' src={dogBreed.image_link} alt={dogBreed.name} />
       <CardBody height='50%' textAlign='center' display='flex' flexDirection='column' justifyContent='space-evenly'>
         <Heading fontSize='3xl'>{dogBreed.name}</Heading>
         <div>
