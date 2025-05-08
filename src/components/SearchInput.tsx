@@ -17,8 +17,15 @@ const SearchInput = ({ onSearch }:SearchText) => {
       }
     }}>
       <InputGroup>
-        <InputLeftElement children={<BsSearch />} />
-        <Input ref={ref} borderRadius={20} variant='filled' placeholder='Search dog breeds...' aria-label='Search dog breeds' />
+        <InputLeftElement pointerEvents='none'>
+          <BsSearch aria-hidden="true" />
+        </InputLeftElement>
+        <Input 
+          ref={ref} 
+          borderRadius={20} 
+          placeholder='Search dog breeds...' 
+          aria-label='Search dog breeds' 
+        />
         <VisuallyHidden>
           <Button type="submit" aria-label="Search">Search</Button>
         </VisuallyHidden>

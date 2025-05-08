@@ -6,7 +6,9 @@ interface Props {
 }
 
 const DogBreedHeading = ({ breedQuery }:Props) => {
-  const heading = breedQuery.searchText ? `${breedQuery.searchText.toUpperCase()} BREEDS` : ''
+  const heading = breedQuery.searchText ? `${breedQuery.searchText.toUpperCase()} BREEDS` : null
+
+  if (!heading) return null;
 
   return (
     <Heading textAlign='center' marginY={8}>{heading}</Heading>

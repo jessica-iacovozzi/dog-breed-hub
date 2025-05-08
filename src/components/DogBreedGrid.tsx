@@ -27,17 +27,14 @@ const DogBreedGrid = ({breedQuery}: Props) => {
       if (entries[0].isIntersecting && hasMore) {
         setOffset(prev => prev + 20)
         setIsAtTop(false)
-        console.log('set offset to +20')
       }
       if (breedQuery.searchText && (prevSearch !== breedQuery.searchText) && window.pageYOffset === 0) {
         setOffset(0)
         setIsAtTop(true)
-        console.log('set offset to 0')
       }
     }, {
       rootMargin: '100px'
     })
-    console.log(isAtTop)
     intObserver.current.observe(breed)
   }, [isLoading, hasMore, breedQuery.searchText] )
 
@@ -46,13 +43,13 @@ const DogBreedGrid = ({breedQuery}: Props) => {
   const content = dogBreeds.map((breed, i) => {
     if (dogBreeds.length === i + 1) {
       return (
-        <div className='flippable-card-container'>
+        <div key={breed.name || `breed-${i}`} className='flippable-card-container'>
           <FlipCard ref={lastBreedRef} dogBreed={breed}/>
         </div>
       )
     }
     return (
-      <div className='flippable-card-container'>
+      <div key={breed.name || `breed-${i}`} className='flippable-card-container'>
         <FlipCard dogBreed={breed}/>
       </div>
     )

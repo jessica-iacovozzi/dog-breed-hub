@@ -28,6 +28,6 @@ const theme = extendTheme({
       900: '#111'
     }
   }
- });
+});
 
 export default theme;
